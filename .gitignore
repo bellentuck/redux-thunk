@@ -4,3 +4,8 @@ coverage
 lib
 dist
 es
+src
+dist
+lib
+editorconfig
+travis
