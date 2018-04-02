@@ -16,7 +16,6 @@ describe('thunk middleware', () => {
   describe('handle next', () => {
     it('must return a function to handle action', () => {
       const actionHandler = nextHandler();
-
       chai.assert.isFunction(actionHandler);
       chai.assert.strictEqual(actionHandler.length, 1);
     });

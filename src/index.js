@@ -1,14 +1,7 @@
-function createThunkMiddleware(extraArgument) {
-  return ({ dispatch, getState }) => next => action => {
-    if (typeof action === 'function') {
-      return action(dispatch, getState, extraArgument);
-    }
-
-    return next(action);
+export default function thunkMiddleware({dispatch, getState}) {
+  return function nextHandler({dispatch, getState}) {
+    return function actionHandler(next) {
+      return function action() {};
+    };
   };
 }
-
-const thunk = createThunkMiddleware();
-thunk.withExtraArgument = createThunkMiddleware;
-
-export default thunk;
